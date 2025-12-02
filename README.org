@@ -1,0 +1,5 @@
+#+title: Advent of Code 2025
+
+Solutions to the 2025 puzzles!
+
+1. [[org:../Projects/AoC-2025/D1/README.org][Day 1]]
