@@ -1,3 +1,68 @@
 #+title: Advent of Code 2025 - Day 1
 * Puzzle [[https://adventofcode.com/2025/day/1][Day 1 - Advent of Code]]
+- dial from 00 to 99 (NN), makes a *click* when reaching each number.
+
+** Input Structure
+- Sequence of *rotations* (1 per line)
+  - ~L~ → Rotation to lower numbers
+  - ~R~ → Rotation to higher numbers
++ Wrap it with %, as C++ → use [[https://en.wikipedia.org/wiki/Modular_arithmetic][modular arithmetic (Gauss)]] with floored division convention
+
+- ~NN~ → number of rotations.
+- You start from 50.
+
 * Solution using C++ STD 20
+- Meson is there just because I was learning it right before AoC. You can just ~g++ src/main.cpp -o aoc-2020-d1~ or whatever you feel like doing.
+- I actually just used ~org-babbel~ to solve it.
+
+-----
+
+#+begin_src C++ :includes <iostream> <cmath>
+
+#define DIAL 50
+
+template <typename T> T floor_mod(T a, T b){
+    return a - b * std::floor(static_cast<double>(a) / static_cast<double>(b));
+}
+
+int right(int r){
+    return floor_mod( (DIAL + r), 99 );
+}
+
+int left(int l){
+    return floor_mod((DIAL - l), 99);
+}
+
+int main(){
+
+    std::cout << "Dial: " << DIAL << std::endl;
+
+/***/
+
+    int r20 = right(20);
+    int r60 = right(60);
+
+    int a = floor(2);
+
+    std::cout << "R20: " << r20 << std::endl;
+    std::cout << "R60: " << r60 << std::endl;
+
+/***/
+
+
+    int l10 = left(10);
+    int l90 = left(90);
+
+    std::cout << "L10: " << l10 << std::endl;
+    std::cout << "L90: " << l90 << std::endl;
+
+    return 0;
+}
+#+end_src
+
+#+RESULTS:
+| Dial: | 50 |
+| R20:  | 70 |
+| R60:  | 11 |
+| L10:  | 40 |
+| L90:  | 59 |
