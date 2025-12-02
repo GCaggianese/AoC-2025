@@ -33,6 +33,22 @@ int left(int l){
     return floor_mod((DIAL - l), 99);
 }
 
+int fright(int dial, int r){
+    return floor_mod( (dial + r), 99 );
+}
+
+int fleft(int dial, int l){
+    return floor_mod((dial - l), 99);
+}
+
+int click(int clicker, int dial){
+    int counter = 0;
+    if(dial == 0){
+        counter += 1;
+    }
+    return clicker + counter;
+}
+
 int main(){
 
     std::cout << "Dial: " << DIAL << std::endl;
@@ -56,13 +72,48 @@ int main(){
     std::cout << "L10: " << l10 << std::endl;
     std::cout << "L90: " << l90 << std::endl;
 
+/***/
+
+    int password = 0;
+    int dial_test = 50;
+
+    dial_test = fleft(dial_test, 68);
+    password = click(password, dial_test);
+    dial_test = fleft(dial_test, 30);
+    password = click(password, dial_test);
+    dial_test = fright(dial_test, 48);
+    password = click(password, dial_test);
+    std::cout << dial_test << " IS ZERO\n";
+    dial_test = fleft(dial_test, 5);
+    password = click(password, dial_test);
+    dial_test = fright(dial_test, 60);
+    std::cout << dial_test << " IS ZERO\n";
+    password = click(password, dial_test);
+    dial_test = fleft(dial_test, 55);
+    password = click(password, dial_test);
+    dial_test = fleft(dial_test, 1);
+    std::cout << dial_test << " IS ZERO\n";
+    password = click(password, dial_test);
+    dial_test = fleft(dial_test, 99);
+    password = click(password, dial_test);
+    dial_test = fright(dial_test, 14);
+    password = click(password, dial_test);
+    dial_test = fleft(dial_test, 82);
+    password = click(password, dial_test);
+
+    std::cout << "Example key: " << password << std::endl;
+
     return 0;
 }
 #+end_src
 
 #+RESULTS:
-| Dial: | 50 |
-| R20:  | 70 |
-| R60:  | 11 |
-| L10:  | 40 |
-| L90:  | 59 |
+| Dial:   |   50 |   |
+| R20:    |   70 |   |
+| R60:    |   11 |   |
+| L10:    |   40 |   |
+| L90:    |   59 |   |
+| 0IS     | ZERO |   |
+| 55IS    | ZERO |   |
+| 98IS    | ZERO |   |
+| Example | key: | 2 |
