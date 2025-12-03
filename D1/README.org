@@ -1,6 +1,7 @@
 #+title: Advent of Code 2025 - Day 1
 * Puzzle [[https://adventofcode.com/2025/day/1][Day 1 - Advent of Code]]
 - dial from 00 to 99 (NN), makes a *click* when reaching each number.
+  - This means 100 possible values to wrap around.
 
 ** Input Structure
 - Sequence of *rotations* (1 per line)
@@ -15,109 +16,100 @@
 - Meson is there just because I was learning it right before AoC. You can just ~g++ src/main.cpp -o aoc-2020-d1~ or whatever you feel like doing.
 - I actually just used ~org-babbel~ to solve it.
 
+#+begin_src
+...
+R31
+Dial position: 86
+R25
+Dial position: 11
+Clicks: 1129
+#+end_src
+Correct answer~! 🌟+1
 -----
 
 #+begin_src C++ :includes <iostream> <cmath> <fstream> <string> <string_view> <charconv>
 
+int dial = 50;
+int clicker = 0;
+
+template <typename T> T floor_mod(T a, T b) {
+    return a - b * std::floor(static_cast<double>(a) / static_cast<double>(b));
+}
+
+void fright(int r) { dial = floor_mod((dial + r), 100); }
+
+void fleft(int l) { dial = floor_mod((dial - l), 100); }
+
+void click() {
+    if (dial == 0) {
+        clicker += 1;
+    }
+}
+
 void parse_file(std::string_view filepath) {
     std::ifstream file(filepath.data());
-    
-    for (std::string line; std::getline(file, line); ) {
-        if (line.empty()) continue;
-        
+
+    for (std::string line; std::getline(file, line);) {
+        if (line.empty())
+            continue;
+
         char direction = line[0];
-        
+
         int value = 0;
-        auto [ptr, ec] = std::from_chars(line.data() + 1, line.data() + line.size(), value);
-        
-        if (ec == std::errc{}) {  // Success
+        auto [ptr, ec] =
+            std::from_chars(line.data() + 1, line.data() + line.size(), value);
+
+        if (ec == std::errc{}) { // Success
             std::cout << line << '\n';
-            
+
             if (direction == 'L') {
                 fleft(value);
+                click();
+                std::cout << "Dial position: " << dial << "\n";
             } else if (direction == 'R') {
                 fright(value);
+                click();
+                std::cout << "Dial position: " << dial << "\n";
             }
+        }
+        if (ec != std::errc{}) { // Fail
+            std::cerr << "Parse error on line: " << line << '\n';
+            continue;
         }
     }
 }
 
-
-#define DIAL 50
-
-template <typename T> T floor_mod(T a, T b){
-    return a - b * std::floor(static_cast<double>(a) / static_cast<double>(b));
-}
-
-int right(int r){
-    return floor_mod( (DIAL + r), 99 );
-}
-
-int left(int l){
-    return floor_mod((DIAL - l), 99);
-}
-
-void fright(int &dial, int r){
-    dial = floor_mod( (dial + r), 99 );
-}
-
-void fleft(int &dial, int l){
-    dial = floor_mod((dial - l), 99);
-}
-
-int click(int clicker, int dial){
-    int counter = 0;
-    if(dial == 0){
-        counter += 1;
-    }
-    return clicker + counter;
-}
-
 int main(){
 
-    std::cout << "Dial: " << DIAL << std::endl;
-
-/***/
-
-    int r20 = right(20);
-    int r60 = right(60);
-
-    int a = floor(2);
-
-    std::cout << "R20: " << r20 << std::endl;
-    std::cout << "R60: " << r60 << std::endl;
-
-/***/
-
-    int l10 = left(10);
-    int l90 = left(90);
-
-    std::cout << "L10: " << l10 << std::endl;
-    std::cout << "L90: " << l90 << std::endl;
-
-/***/
-
-    int password = 0;
-    int dial_test = 50;
-
-    std::cout << dial_test << " dial_test 50\n";
-    
-    fright(dial_test, 10);
-
-
-    std::cout << dial_test << " dial_test R10\n";
-    
-    // std::cout << "Example key: " << password << std::endl;
+    std::cout << "Hey AoC 2025!\n\n";
+    parse_file("input_test.txt");
+    std::cout << "Clicks: " << clicker << "\n";
 
     return 0;
 }
 #+end_src
 
 #+RESULTS:
-| Dial: |        50 |     |
-| R20:  |        70 |     |
-| R60:  |        11 |     |
-| L10:  |        40 |     |
-| L90:  |        59 |     |
-| 50    | dial_test |  50 |
-| 60    | dial_test | R10 |
+| Hey     | AoC       | 2025! |
+|         |           |       |
+| L68     |           |       |
+| Dial    | position: |    82 |
+| L30     |           |       |
+| Dial    | position: |    52 |
+| R48     |           |       |
+| Dial    | position: |     0 |
+| L5      |           |       |
+| Dial    | position: |    95 |
+| R60     |           |       |
+| Dial    | position: |    55 |
+| L55     |           |       |
+| Dial    | position: |     0 |
+| L1      |           |       |
+| Dial    | position: |    99 |
+| L99     |           |       |
+| Dial    | position: |     0 |
+| R14     |           |       |
+| Dial    | position: |    14 |
+| L82     |           |       |
+| Dial    | position: |    32 |
+| Clicks: | 3         |       |

@@ -6,21 +6,20 @@
 #include <string_view>
 
 int dial = 50;
+int clicker = 0;
 
 template <typename T> T floor_mod(T a, T b) {
     return a - b * std::floor(static_cast<double>(a) / static_cast<double>(b));
 }
 
-void fright(int r) { dial = floor_mod((dial + r), 99); }
+void fright(int r) { dial = floor_mod((dial + r), 100); }
 
-void fleft(int l) { dial = floor_mod((dial - l), 99); }
+void fleft(int l) { dial = floor_mod((dial - l), 100); }
 
-int click(int clicker) {
-    int counter = 0;
+void click() {
     if (dial == 0) {
-        counter += 1;
+        clicker += 1;
     }
-    return clicker + counter;
 }
 
 void parse_file(std::string_view filepath) {
@@ -41,9 +40,11 @@ void parse_file(std::string_view filepath) {
 
             if (direction == 'L') {
                 fleft(value);
+                click();
                 std::cout << "Dial position: " << dial << "\n";
             } else if (direction == 'R') {
                 fright(value);
+                click();
                 std::cout << "Dial position: " << dial << "\n";
             }
         }
@@ -58,6 +59,7 @@ auto main(int argc, char *argv[]) -> int {
 
     std::cout << "Hey AoC 2025!\n";
     parse_file(argv[1]);
+    std::cout << "Clicks: " << clicker << "\n";
 
     return 0;
 }
