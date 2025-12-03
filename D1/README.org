@@ -17,7 +17,31 @@
 
 -----
 
-#+begin_src C++ :includes <iostream> <cmath>
+#+begin_src C++ :includes <iostream> <cmath> <fstream> <string> <string_view> <charconv>
+
+void parse_file(std::string_view filepath) {
+    std::ifstream file(filepath.data());
+    
+    for (std::string line; std::getline(file, line); ) {
+        if (line.empty()) continue;
+        
+        char direction = line[0];
+        
+        int value = 0;
+        auto [ptr, ec] = std::from_chars(line.data() + 1, line.data() + line.size(), value);
+        
+        if (ec == std::errc{}) {  // Success
+            std::cout << line << '\n';
+            
+            if (direction == 'L') {
+                fleft(value);
+            } else if (direction == 'R') {
+                fright(value);
+            }
+        }
+    }
+}
+
 
 #define DIAL 50
 
@@ -33,12 +57,12 @@ int left(int l){
     return floor_mod((DIAL - l), 99);
 }
 
-int fright(int dial, int r){
-    return floor_mod( (dial + r), 99 );
+void fright(int &dial, int r){
+    dial = floor_mod( (dial + r), 99 );
 }
 
-int fleft(int dial, int l){
-    return floor_mod((dial - l), 99);
+void fleft(int &dial, int l){
+    dial = floor_mod((dial - l), 99);
 }
 
 int click(int clicker, int dial){
@@ -65,7 +89,6 @@ int main(){
 
 /***/
 
-
     int l10 = left(10);
     int l90 = left(90);
 
@@ -77,43 +100,24 @@ int main(){
     int password = 0;
     int dial_test = 50;
 
-    dial_test = fleft(dial_test, 68);
-    password = click(password, dial_test);
-    dial_test = fleft(dial_test, 30);
-    password = click(password, dial_test);
-    dial_test = fright(dial_test, 48);
-    password = click(password, dial_test);
-    std::cout << dial_test << " IS ZERO\n";
-    dial_test = fleft(dial_test, 5);
-    password = click(password, dial_test);
-    dial_test = fright(dial_test, 60);
-    std::cout << dial_test << " IS ZERO\n";
-    password = click(password, dial_test);
-    dial_test = fleft(dial_test, 55);
-    password = click(password, dial_test);
-    dial_test = fleft(dial_test, 1);
-    std::cout << dial_test << " IS ZERO\n";
-    password = click(password, dial_test);
-    dial_test = fleft(dial_test, 99);
-    password = click(password, dial_test);
-    dial_test = fright(dial_test, 14);
-    password = click(password, dial_test);
-    dial_test = fleft(dial_test, 82);
-    password = click(password, dial_test);
+    std::cout << dial_test << " dial_test 50\n";
+    
+    fright(dial_test, 10);
 
-    std::cout << "Example key: " << password << std::endl;
+
+    std::cout << dial_test << " dial_test R10\n";
+    
+    // std::cout << "Example key: " << password << std::endl;
 
     return 0;
 }
 #+end_src
 
 #+RESULTS:
-| Dial:   |   50 |   |
-| R20:    |   70 |   |
-| R60:    |   11 |   |
-| L10:    |   40 |   |
-| L90:    |   59 |   |
-| 0IS     | ZERO |   |
-| 55IS    | ZERO |   |
-| 98IS    | ZERO |   |
-| Example | key: | 2 |
+| Dial: |        50 |     |
+| R20:  |        70 |     |
+| R60:  |        11 |     |
+| L10:  |        40 |     |
+| L90:  |        59 |     |
+| 50    | dial_test |  50 |
+| 60    | dial_test | R10 |
