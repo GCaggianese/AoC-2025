@@ -27,6 +27,8 @@ Clicks: 1129
 Correct answer~! 🌟+1
 -----
 
++ NOTICE: This only solves ~Part One~ Puzzle, for the whole solution check ~/src/main.cpp~
+
 #+begin_src C++ :includes <iostream> <cmath> <fstream> <string> <string_view> <charconv>
 
 int dial = 50;
