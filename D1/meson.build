@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Germán Caggianese <german.caggianese@pm.me>
+# SPDX-FileCopyrightText: 2025 NONE
+#
+# SPDX-License-Identifier: GPL-3.0-only
+# SPDX-License-Identifier: Unlicense
+
 project(
   'AoC-2025_D1',
   'cpp',

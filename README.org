@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Germán Caggianese <german.caggianese@pm.me>
+# SPDX-License-Identifier: GPL-3.0-only
+
 #+title: Advent of Code 2025
 
 Solutions to the 2025 puzzles!

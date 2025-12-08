@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Germán Caggianese <german.caggianese@pm.me>
+//
+// SPDX-License-Identifier: GPL-3.0-only
+
 #include <charconv>
 #include <cmath>
 #include <fstream>
