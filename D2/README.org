@@ -50,10 +50,10 @@
 - Ex.: \( 1188511885 = 11885 × 100001 \)
 
 **** Detection Algorithm:
-For any given number ~value~:
+For any ~value~:
 1. Calculate digit count: ~digits = floor(log₁₀(value)) + 1~
 2. Check if even: ~if (digits % 2 ≠ 0) → valid (skip)~
-3. Calculate multiplier: ~M = 10^(digits/2) + 1~
+3. Calculate the multiplier: ~M = 10^(digits/2) + 1~
 4. Test divisibility: ~if (value % M == 0) → invalid~
 
 **** Odd-digit numbers are always valid:
