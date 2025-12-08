@@ -18,7 +18,7 @@ int main(int argc, char **argv) {
 
     Nob_Cmd cmd = {0};
 
-    nob_cmd_append(&cmd, "gcc", "-Wall", "-Wextra", "-o",
+    nob_cmd_append(&cmd, "gcc", "-Wall", "-Wextra", "-lm", "-o",
                    BUILD_FOLDER "AoC-2025_D2", SRC_FOLDER "AoC-2025_D2.c");
     if (!nob_cmd_run(&cmd))
         return 1;

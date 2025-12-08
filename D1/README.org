@@ -1,8 +1,8 @@
 # SPDX-FileCopyrightText: 2025 Germán Caggianese <german.caggianese@pm.me>
-# SPDX-License-Identifier: GPL-3.0-only
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 #+title: Advent of Code 2025 - Day 1
-* Puzzle [[https://adventofcode.com/2025/day/1][Day 1 - Advent of Code]]
+* Puzzle [[https://adventofcode.com/2025/day/1][Day 1: Secret Entrance]]
 - dial from 00 to 99 (NN), makes a *click* when reaching each number.
   - This means 100 possible values to wrap around.
 
