@@ -45,13 +45,13 @@
 **** Detection Algorithm:
 For any given ~value~:
 1. Calculate digit count:
-   $$\text{digits} = \lfloor \log_{10}(\text{value}) \rfloor + 1$$
+   $\text{digits} = \lfloor \log_{10}(\text{value}) \rfloor + 1$
 2. Check if even:
-   $$\text{digits} \equiv 1 \pmod{2} \implies \text{valid (skip)}$$
+   $\text{digits} \equiv 1 \pmod{2} \implies \text{valid (skip)}$
 3. Calculate the multiplier:
-   $$M = 10^{n} + 1 \quad \text{where} \quad n = \frac{\text{digits}}{2}$$
+   $M = 10^{n} + 1 \quad \text{where} \quad n = \frac{\text{digits}}{2}$
 4. Test divisibility:
-   $$\text{value} \equiv 0 \pmod{M} \implies \text{invalid}$$
+   $\text{value} \equiv 0 \pmod{M} \implies \text{invalid}$
 **** Odd-digit numbers are always valid:
 - Any number with odd digits cannot be split into two parts
 - Ex.: 111, 212, 11011 all have 3 or 5 digits
