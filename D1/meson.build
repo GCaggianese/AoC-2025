@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Germán Caggianese <german.caggianese@pm.me>
 #
-# SPDX-License-Identifier: GPL-3.0-or-later
+# SPDX-License-Identifier: Apache-2.0
 
 project(
   'AoC-2025_D1',

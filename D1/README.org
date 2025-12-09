@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Germán Caggianese <german.caggianese@pm.me>
-# SPDX-License-Identifier: GPL-3.0-or-later
+# SPDX-License-Identifier: Apache-2.0
 
 #+title: Advent of Code 2025 - Day 1
 * Puzzle [[https://adventofcode.com/2025/day/1][Day 1: Secret Entrance]]
