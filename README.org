@@ -1,9 +1,0 @@
-# SPDX-FileCopyrightText: 2025 Germán Caggianese <german.caggianese@pm.me>
-# SPDX-License-Identifier: Apache-2.0
-
-#+title: Advent of Code 2025
-
-Solutions to the 2025 puzzles!
-
-1. [[./D1/README.org][Day 1]]
-2. [[./D2/README.org][Day 2]]
