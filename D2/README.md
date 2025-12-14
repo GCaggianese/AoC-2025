@@ -94,3 +94,8 @@ SPDX-License-Identifier: Apache-2.0
 
     -   No need to check each digit manually
     -   Time complexity: O(1) per number
+
+# Solution Using C
+I built the solution using C and the amazing [nob.h](https://github.com/tsoding/nob.h) as *no-build system*. 
+If you want to run it just bootstrap `nob.c` and then run `./nob`; it will compile the solution which you can 
+run by `./build/AoC-2025_D2 input.txt`
