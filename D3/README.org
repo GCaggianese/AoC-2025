@@ -3,3 +3,12 @@
 
 #+title: Advent of Code 2025 - Day 3
 * Puzzle [[https://adventofcode.com/2025/day/3][Day 3: Lobby]]
+
+1. int jolt = 0;
+2. make a list and a copy of it of the input, ~og~, ~aux1~
+3. ~aux1~ will drop the last value
+   ex.: ~987654321111118~ → ~98765432111111~
+4. you'll take the max here → jolt += aux1.max*10
+5. create a 2nd list ~aux2~, slice of the ~og~ from the next position of the max before
+   ex.: ~98765432111111~ max = 9 → ~aux2~ = ~87654321111118~
+6. you'll take the max here → jolt += aux2.max
