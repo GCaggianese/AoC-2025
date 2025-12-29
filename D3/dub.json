@@ -1,0 +1,9 @@
+{
+	"authors": [
+		"Germán Caggianese"
+	],
+	"copyright": "Copyright © 2025, Germán Caggianese <german.caggianese@pm.me>",
+	"description": "Advent of Code 2025 - Day 3: Lobby",
+	"license": "Apache-2.0",
+	"name": "aoc-2025_d3"
+}

@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2025 NONE
+#
+# SPDX-License-Identifier: Unlicense
+.dub
+docs.json
+__dummy.html
+docs/
+/aoc-2025_d3
+aoc-2025_d3.so
+aoc-2025_d3.dylib
+aoc-2025_d3.dll
+aoc-2025_d3.a
+aoc-2025_d3.lib
+aoc-2025_d3-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst
