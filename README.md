@@ -9,5 +9,8 @@ SPDX-License-Identifier: Apache-2.0
 Solutions to the 2025 puzzles!
 
 1. [Day 1 - C++](./D1/README.org)
+   [Standard C++](https://isocpp.org/)
 2. [Day 2 - C](./D2/README.md)
+   [The C programming language](https://www.c-language.org/)
 2. [Day 3 - D](./D3/README.org)
+   [D programming language](https://dlang.org/)
