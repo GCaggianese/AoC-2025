@@ -15,3 +15,17 @@
 6. you'll take the max here → jolt += aux2.max
 
 ** Part Two:
+1. long jolt = 0;
+2. multiplier = 10^11 (since we're building a 12-digit number)
+3. for i = 0 to 11 (picking 12 digits):
+   a. remaining_needed = 12 - i
+   b. window = og[0 .. og.length - remaining_needed + 1]
+      (leave enough elements for future picks)
+      ex.: first pick from ~234234234234278~, need 12 digits
+           window = ~[2,3,4,2]~ (must leave 11 for later)
+   c. pick maxVal from window → jolt += maxVal * multiplier
+   d. slice og from maxIdx+1 onward (discard everything up to & including pick)
+      ex.: picked 4 at idx 2 → og becomes ~[2,3,4,2,3,4,2,7,8]~
+   e. multiplier /= 10
+4. Summary: pick the highest available digit that still leaves
+   enough digits remaining to complete 12 picks
