@@ -1,0 +1,55 @@
+# SPDX-FileCopyrightText: 2025 Germán Caggianese <german.caggianese@pm.me>
+# SPDX-License-Identifier: Apache-2.0
+
+#+title: Advent of Code 2025 - Day 5
+
+* Puzzle: [[https://adventofcode.com/2025/day/5][Day 5: Cafeteria]]
+
+** Part One
+
+*** Problem
+Given an input file containing:
+- Ranges in format ~start-end~ (e.g., ~3-5~, ~10-14~)
+- Individual numbers to check
+
+Count how many individual numbers fall within any of the defined ranges (inclusive).
+
+*** Algorithm
+1. Parse all ranges into a list of =(start, end)= pairs
+2. For each individual number:
+   a. Check if it falls within any range: ~start ≤ n ≤ end~
+   b. If yes, increment counter
+3. Return final counter
+
+*** Implementation Notes (GNU Guile Scheme)
+
+**** Failed Approaches
+***** Boolean Vector
+- *Idea:* Create a vector indexed by numbers, mark ranges as ~#t~
+- *Problem:* Input contains numbers up to ~10^14~, requiring impossible amounts of RAM
+- *Verdict:* Works for small test cases, catastrophically explodes on real input
+
+***** Hash Table
+- *Idea:* Expand ranges into hash table entries for O(1) lookup
+- *Problem:* Expanding ranges like ~1-1000000000~ creates billions of entries
+- *Result:* Never finished execution
+- *Verdict:* Memory bloat + performance disaster
+
+**** Final Solution: Range Checking
+- *Approach:* Store ranges as pairs, check containment directly
+- *Complexity:*
+  - Space: O(R) where R = number of ranges (~1000)
+  - Time: O(V × R) where V = values to check (~200)
+- *Runtime:* Instant (<1s)
+- *Key insight:* Don't expand ranges—check membership directly
+
+***** Lesson Learned
+#+begin_quote
+Pick the right data structure for the problem.
+Premature expansion is the root of all memory evil.
+#+end_quote
+
+*** Code
+#+begin_src scheme
+;; See aoc2025-d5.scm for full implementation
+#+end_src
