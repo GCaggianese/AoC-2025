@@ -616,3 +616,38 @@ Counter P2: <number>
 # Local Variables:
 # eval: (add-hook 'after-save-hook #'org-babel-tangle nil t)
 # End:
+
+** Some benchmarks
+*** Python3
+❯ time python3 draft.py
+Counter P1: 1549
+Counter P2: 8887
+
+________________________________________________________
+Executed in    1.16 secs    fish           external
+   usr time    1.15 secs    0.00 micros    1.15 secs
+   sys time    0.01 secs  871.00 micros    0.00 secs
+
+*** PyPy3
+❯ time pypy3 draft.py
+Counter P1: 1549
+Counter P2: 8887
+
+________________________________________________________
+Executed in  215.26 millis    fish           external
+   usr time  193.14 millis    0.00 millis  193.14 millis
+   sys time   21.98 millis    1.14 millis   20.84 millis
+
+*** FASM
+❯ time ./main #FASM
+Counter P1: 1549
+Counter P2: 8887
+
+________________________________________________________
+Executed in   29.71 millis    fish           external
+   usr time   28.89 millis    0.00 micros   28.89 millis
+   sys time    0.77 millis  773.00 micros    0.00 millis
+
+As expected FASM is in the order of 10.7x faster than PyPy's JIT, and 58x faster
+than Python.  I know that my FASM code is not the most efficient, not optimized,
+neither is the Python one, this benchmark is just a funny fact.
