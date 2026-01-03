@@ -4,9 +4,7 @@
 #+title: Advent of Code 2025 - Day 5
 
 * Puzzle: [[https://adventofcode.com/2025/day/5][Day 5: Cafeteria]]
-
 ** Part One
-
 *** Problem
 Given an input file containing:
 - Ranges in format ~start-end~ (e.g., ~3-5~, ~10-14~)
@@ -22,7 +20,6 @@ Count how many individual numbers fall within any of the defined ranges (inclusi
 3. Return final counter
 
 *** Implementation Notes (GNU Guile Scheme)
-
 **** Failed Approaches
 ***** Boolean Vector
 - *Idea:* Create a vector indexed by numbers, mark ranges as ~#t~
@@ -43,10 +40,36 @@ Count how many individual numbers fall within any of the defined ranges (inclusi
 - *Runtime:* Instant (<1s)
 - *Key insight:* Don't expand ranges—check membership directly
 
-***** Lesson Learned
 #+begin_quote
 Pick the right data structure for the problem.
 Premature expansion is the root of all memory evil.
+#+end_quote
+
+** Part Two
+*** Problem
+- Count how many unique numbers exist across all defined ranges (expanded, without
+repetition).
+- Do not include the individual numbers.
+
+*** Solution
+1. Parse all ranges into =(start, end)= pairs (same as part one)
+2. Sort ranges by start position
+3. Merge overlapping and adjacent intervals:
+   - If ~next.start ≤ current.end + 1~: merge into one range
+   - Otherwise: keep as separate range
+4. Count numbers in merged ranges
+   - Sum all counts
+
+*** Implementation: Interval Merging
+- *Approach:* No expand ranges → merge overlapping intervals and count.
+- *Complexity:*
+  - Space: O(R) where R = number of ranges
+  - Time: O(R log R) for sorting + O(R) for merging = O(R log R)
+- *Key:* ~[1, 1000000000]~ is just 2 numbers storing 1 billion values
+
+#+begin_quote
+Mathematical representation >> physical expansion.
+Store the abstraction is the key.
 #+end_quote
 
 *** Code

@@ -16,3 +16,5 @@ Solutions to the 2025 puzzles!
    - [D programming language](https://dlang.org/)
 4. [Day 4 - FASM](./D4/README.org)
    - [flat assembler](https://flatassembler.net/)
+5. [Day 5 - GNU GUILE](./D5/README.org)
+   - [GNU's Programming and Extension Language](https://www.gnu.org/software/guile/)

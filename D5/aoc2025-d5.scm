@@ -30,12 +30,43 @@
            ((start end) (and (>= n start) (<= n end)))))
        ranges))
 
+(define (merge-ranges ranges)
+  "Merge overlapping/adjacent ranges"
+  (if (null? ranges)
+      '()
+      (let* ((sorted (sort ranges (lambda (a b) (< (car a) (car b)))))
+             (first (car sorted))
+             (rest (cdr sorted)))
+        (let loop ((current first) (remaining rest) (merged '()))
+          (if (null? remaining)
+              (reverse (cons current merged))
+              (let* ((next (car remaining))
+                     (start1 (car current))
+                     (end1 (cadr current))
+                     (start2 (car next))
+                     (end2 (cadr next)))
+                (if (<= start2 (+ end1 1))  ; overlapping or adjacent
+                    (loop (list start1 (max end1 end2))
+                          (cdr remaining)
+                          merged)
+                    (loop next
+                          (cdr remaining)
+                          (cons current merged)))))))))
+
+(define (count-numbers-in-ranges ranges)
+  "Count total unique numbers covered by ranges"
+  (fold (lambda (range acc)
+          (match range
+            ((start end) (+ acc (- end start) 1))))
+        0
+        ranges))
+
 (define (process-file filename)
-  "Store ranges as pairs, check values against them"
+  "Parse file and solve both parts"
   (let ((ranges '())
         (values-list '()))
 
-    ;; Pass 1: Collect ranges and values
+    ;; Parse file
     (call-with-input-file filename
       (lambda (port)
         (let loop ()
@@ -54,7 +85,7 @@
     (format #t "Loaded ~a ranges\n" (length ranges))
     (format #t "Checking ~a values...\n\n" (length values-list))
 
-    ;; Pass 2: Check each value against all ranges
+    ;; Part 1
     (let ((counter 0))
       (for-each (lambda (n)
                   (if (in-any-range? n ranges)
@@ -64,11 +95,19 @@
                       (format #t "Value ~a: FALSE\n" n)))
                 (reverse values-list))
 
-      counter)))
+      (format #t "\n=== Part 1 ===\n")
+      (format #t "Final counter: ~a\n\n" counter)
+
+      ;; Part 2
+      (let ((merged (merge-ranges ranges)))
+        (format #t "=== Part 2 ===\n")
+        (format #t "Original ranges: ~a\n" (length ranges))
+        (format #t "Merged ranges: ~a\n" (length merged))
+        (format #t "Merged intervals: ~a\n" merged)
+        (format #t "Total unique numbers: ~a\n"
+                (count-numbers-in-ranges merged))))))
 
 (define (main args)
   (if (< (length args) 2)
       (format #t "Usage: ~a <file>\n" (car args))
-      (let* ((filename (cadr args))
-             (counter (process-file filename)))
-        (format #t "\nFinal counter: ~a\n" counter))))
+      (process-file (cadr args))))
