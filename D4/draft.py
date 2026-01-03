@@ -75,11 +75,11 @@ out_mat = add_neighbors(in_mat)
 out_mat = correction(out_mat)
 filtered_mat = elementwise_multiply(out_mat, invert(in_mat))
 
+# print("Out_Mat")
+# print(out_mat)
 
-print("Out_Mat")
-print(out_mat)
-
-print("Filtered")
-print(filtered_mat)
+# print("Filtered")
+# print(filtered_mat)
 
 print("Counter:", counter(filtered_mat))
+# print(len(filtered_mat))
