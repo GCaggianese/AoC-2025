@@ -12,5 +12,7 @@ Solutions to the 2025 puzzles!
    - [Standard C++](https://isocpp.org/)
 2. [Day 2 - C](./D2/README.md)
    - [The C programming language](https://www.c-language.org/)
-2. [Day 3 - D](./D3/README.org)
+3. [Day 3 - D](./D3/README.org)
    - [D programming language](https://dlang.org/)
+4. [Day 4 - FASM](./D4/README.org)
+   - [flat assembler](https://flatassembler.net/)
