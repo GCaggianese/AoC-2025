@@ -7,3 +7,4 @@
 *.log
 tmp/
 lineup.org
+.dir-locals.el

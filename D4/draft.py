@@ -81,5 +81,37 @@ filtered_mat = elementwise_multiply(out_mat, invert(in_mat))
 # print("Filtered")
 # print(filtered_mat)
 
-print("Counter:", counter(filtered_mat))
+
+print("Counter P1:", counter(filtered_mat))
 # print(len(filtered_mat))
+
+def copy_matrix(mat):
+    return [[mat[i][j] for j in range(len(mat[0]))]
+            for i in range(len(mat))]
+
+# ### ### #
+# Part 2
+counter_p2 = 0
+current_mat = copy_matrix(in_mat)
+
+while True:
+    out_p2 = add_neighbors(current_mat)
+    out_p2 = correction(out_p2)
+    filtered_p2 = elementwise_multiply(out_p2, invert(current_mat))
+
+    new_activations = 0
+    rows = len(filtered_p2)
+    cols = len(filtered_p2[0])
+
+    for i in range(rows):
+        for j in range(cols):
+            if filtered_p2[i][j] >= 5:
+                new_activations += 1
+                current_mat[i][j] = 1
+
+    counter_p2 += new_activations
+
+    if new_activations == 0:
+        break
+
+print("Counter P2:", counter_p2)
