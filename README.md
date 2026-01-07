@@ -18,3 +18,7 @@ Solutions to the 2025 puzzles!
    - [flat assembler](https://flatassembler.net/)
 5. [Day 5 - GNU GUILE](./D5/README.org)
    - [GNU's Programming and Extension Language](https://www.gnu.org/software/guile/)
+6. [Day 6 - Julia](./D6/README.org)
+   - [The Julia Programming Language](https://julialang.org/)
+7. [Day 7 - Zig](./D7/README.md)
+   - [Zig Programming language](https://ziglang.org/)
