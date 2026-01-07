@@ -2,7 +2,7 @@
 SPDX-FileCopyrightText: 2025 Germán Caggianese <german.caggianese@pm.me>
 SPDX-License-Identifier: Apache-2.0
 -->
-# Puzzle [https://adventofcode.com/2025/day/7](Day 7: Laboratories)
+# Puzzle [Day 7: Laboratories](https://adventofcode.com/2025/day/7)
 
 ## Part One
 Process top-to-bottom. For each cell `a_{i,j}`:
