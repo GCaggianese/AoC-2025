@@ -1,0 +1,41 @@
+# SPDX-FileCopyrightText: 2025 Germán Caggianese <german.caggianese@pm.me>
+# SPDX-License-Identifier: Apache-2.0
+
+#+title: Advent of Code 2025 - Day 6
+
+* Puzzle [[https://adventofcode.com/2025/day/6][Day 6: Trash Compactor]]
+** Part One
+- Parse the input as a matrix using spaces (" ") as separators
+- Do the operator operation (last row) to every column in the same row
+- Sum the results.
+
+** Part 2
+
+Part 2 requires reading the input numbers **vertically** instead of horizontally.
+Each column position becomes a digit, and digits stack top-to-bottom to form new
+numbers.
+Here is important to denote that there are spaces with the number inputs too (" 51")
+as an example, this matters as when reading vertically will change the indentation, therefore if it's a part of another number or not.
+
+*** Updated Parsing
+
+1. *Mantain the character positions*
+   - ~readdlm~ destroys spatial information by treating spaces as delimiters.
+      → use ~readlines()~ and parse characters one by one.
+
+2. *Expand the header*
+   - The operators row uses spaces to mean "repeat previous operator".
+     So ~*   +   *   +~ expands to ~****++++****+++~ → each column has its operator.
+
+3. *Read columns vertically*
+   - For each column position, stack the digits from all rows (top to bottom).
+   - Concatenate them into a single number.
+     - Spaces within the number grid mean "no digit here".
+
+4. *Separator columns*
+   - A column whith all cells ~" "~ means a separator between operations.
+
+5. *Apply operators and sum*
+   - Group consecutive numbers between separators
+   - Apply their operator
+   - Sum all results for the answer.

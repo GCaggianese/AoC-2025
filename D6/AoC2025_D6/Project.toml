@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Germán Caggianese <german.caggianese@pm.me>
+#
+# SPDX-License-Identifier: Apache-2.0
+
 name = "AoC2025_D6"
 uuid = "7c6c7ab8-b19a-4243-992d-d6aad6fd627d"
 version = "0.1.0"

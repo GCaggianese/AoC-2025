@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Germán Caggianese <german.caggianese@pm.me>
+//
+// SPDX-License-Identifier: Apache-2.0
+
 const std = @import("std");
 
 // Although this function looks imperative, it does not perform the build

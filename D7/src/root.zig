@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Germán Caggianese <german.caggianese@pm.me>
+//
+// SPDX-License-Identifier: Apache-2.0
+
 //! By convention, root.zig is the root source file when making a library.
 const std = @import("std");
 

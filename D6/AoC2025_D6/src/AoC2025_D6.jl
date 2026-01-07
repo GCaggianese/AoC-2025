@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Germán Caggianese <german.caggianese@pm.me>
+#
+# SPDX-License-Identifier: Apache-2.0
+
 module AoC2025_D6
 
 using DelimitedFiles
