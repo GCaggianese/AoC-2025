@@ -2,7 +2,8 @@
 SPDX-FileCopyrightText: 2025 Germán Caggianese <german.caggianese@pm.me>
 SPDX-License-Identifier: Apache-2.0
 -->
-# Puzzle [[https://adventofcode.com/2025/day/7][Day 7: Laboratories]]
+# Puzzle [https://adventofcode.com/2025/day/7](Day 7: Laboratories)
+
 ## Part One
 Process top-to-bottom. For each cell `a_{i,j}`:
 - `.` → do nothing
@@ -37,3 +38,6 @@ Right path: hits `^` at (4,2) → splits again → 2
 ### Optimization
 Memoization via `HashMap(State, usize)` where `State = {row, col}`.
 Avoids recalculating paths from the same position.
+
+## Implementation in Zig
+Run with `zig build run`
