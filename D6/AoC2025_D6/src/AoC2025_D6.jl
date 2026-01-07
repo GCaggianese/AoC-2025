@@ -6,7 +6,7 @@ module AoC2025_D6
 
 using DelimitedFiles
 # Reads whitespace-delimited by default
-data = readdlm("../input.txt")
+data = readdlm("./input.txt")
 
 # Extract operators (last line)
 ops = data[end, :]
@@ -94,6 +94,6 @@ function parse_worksheet(filepath::String)
     return grand_total
 end
 
-parse_worksheet("../input.txt")
+parse_worksheet("./input.txt")
 
 end # module AoC2025_D6

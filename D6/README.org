@@ -39,3 +39,8 @@ as an example, this matters as when reading vertically will change the indentati
    - Group consecutive numbers between separators
    - Apply their operator
    - Sum all results for the answer.
+
+* Implementation in Julia
+See source code at ~/AoC2025_D6/src/AoC2025_D6.jl~.
+Run from inside the project ~AoC2025_D6~ with
+~julia --project=. src/AoC2025_D6.jl~
