@@ -1,0 +1,12 @@
+name = "aoc_d8"
+description = ""
+version = "0.1.0-dev"
+
+authors = ["Germán Caggianese"]
+maintainers = ["Germán Caggianese <german.caggianese@pm.me>"]
+maintainers-logins = ["GCaggianese"]
+licenses = "Apache-2.0"
+website = ""
+tags = []
+
+executables = ["aoc_d8"]
