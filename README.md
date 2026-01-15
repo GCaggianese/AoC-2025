@@ -22,3 +22,5 @@ Solutions to the 2025 puzzles!
    - [The Julia Programming Language](https://julialang.org/)
 7. [Day 7 - Zig](./D7/README.md)
    - [Zig Programming language](https://ziglang.org/)
+8. [Day 8 - Ada](./D8/README.md)
+   - [Ada Resource Association](https://www.adaic.org/)
