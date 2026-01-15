@@ -1,3 +1,7 @@
+-- SPDX-FileCopyrightText: 2026 NONE
+--
+-- SPDX-License-Identifier: Unlicense
+
 with "config/aoc_d8_config.gpr";
 project Aoc_D8 is
 

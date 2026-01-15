@@ -1,3 +1,7 @@
+--  SPDX-FileCopyrightText: 2026 NONE
+--
+--  SPDX-License-Identifier: Unlicense
+
 with Ada.Text_IO;                       use Ada.Text_IO;
 with Ada.Containers.Vectors;
 with Ada.Strings.Fixed;                 use Ada.Strings.Fixed;

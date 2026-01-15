@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 NONE
+#
+# SPDX-License-Identifier: Unlicense
+
 name = "aoc_d8"
 description = ""
 version = "0.1.0-dev"
