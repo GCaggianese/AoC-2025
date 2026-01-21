@@ -1,3 +1,7 @@
+;;; SPDX-FileCopyrightText: 2026 Germán Caggianese <german.caggianese@pm.me>
+;;;
+;;; SPDX-License-Identifier: Apache-2.0
+
 (define (string-index str char . rest)
   (let ((start (if (null? rest) 0 (car rest))))
     (let loop ((i start))
@@ -21,8 +25,6 @@
 (define (parse-csv path)
   (map (lambda (ln) (split-and-convert ln #\,))
        (read-file-string-list path)))
-
-;; (define parsed-csv (parse-csv "D9/input_test.txt" ))
 
 (define (square x)
   (* x x))

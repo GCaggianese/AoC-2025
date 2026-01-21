@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 NONE
+#
+# SPDX-License-Identifier: Unlicense
+
 # Makefile for Gambit Scheme AoC day-9
 SRC  := src/aoc_d9.scm
 OUT  := build/d9
