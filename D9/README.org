@@ -1,6 +1,0 @@
-# SPDX-FileCopyrightText: 2026 Germán Caggianese <german.caggianese@pm.me>
-# SPDX-License-Identifier: Apache-2.0
-
-#+title: Advent of Code 2025 - Day 9
-
-* Puzzle [[https://adventofcode.com/2025/day/9][Day 9: Movie Theater]]
