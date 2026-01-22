@@ -27,7 +27,9 @@ For a rectangle defined by corners $P_i, P_j$ to be valid:
 3.  **Validation**: Iterate all pairs $(P_i, P_j)$. If the area is greater than the current max, validate geometric constraints.
 
 ### Manual Analysis
-Verification of vector distances and area for sample points $\vec{V}_1, \vec{V}_2, \vec{V}_3$:
+Verification of vector distances and area for sample points 
+
+$$ \vec{V}_1, \vec{V}_2, \vec{V}_3\ : $$
 
 $$
 \begin{aligned}
