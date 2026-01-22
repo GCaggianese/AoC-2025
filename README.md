@@ -24,3 +24,5 @@ Solutions to the 2025 puzzles!
    - [Zig Programming language](https://ziglang.org/)
 8. [Day 8 - Ada](./D8/README.md)
    - [Ada Resource Association](https://www.adaic.org/)
+9. [Day 9 - Gambit](./D9/README.md)
+   - [Gambit Scheme](https://gambitscheme.org/)
