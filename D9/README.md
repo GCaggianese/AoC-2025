@@ -38,13 +38,16 @@ $$
 $$
 
 **Distance Checks:**
-$$|\vec{V}_1 - \vec{V}_3| = \sqrt{(3-6)^2 + (1-3)^2} = \sqrt{13} \approx 3.606$$
-$$|\vec{V}_1 - \vec{V}_2| = \sqrt{(3-2)^2 + (1-5)^2} = \sqrt{17} \approx 4.123$$
-$$|\vec{V}_2 - \vec{V}_3| = \sqrt{(2-6)^2 + (5-3)^2} = \sqrt{16+4} = \sqrt{20} \approx 4.472$$
+$$ |\vec{V}_1 - \vec{V}_3| = \sqrt{(3-6)^2 + (1-3)^2} = \sqrt{13} \approx 3.606 $$
+
+$$ |\vec{V}_1 - \vec{V}_2| = \sqrt{(3-2)^2 + (1-5)^2} = \sqrt{17} \approx 4.123 $$
+
+$$ |\vec{V}_2 - \vec{V}_3| = \sqrt{(2-6)^2 + (5-3)^2} = \sqrt{16+4} = \sqrt{20} \approx 4.472 $$
 
 **Area Calculation:**
 For the rectangle defined by $\vec{V}_1$ and $\vec{V}_3$:
-$$Area = |3-6| \cdot |1-3| = 3 \cdot 2 = 6$$
+
+$$ Area = |3-6| \cdot |1-3| = 3 \cdot 2 = 6 $$
 
 ### Polygon Trace
 The input points form a rectilinear loop. Visualizing the connectivity:
