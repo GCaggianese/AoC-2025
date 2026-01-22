@@ -38,6 +38,7 @@ $$
 $$
 
 **Distance Checks:**
+
 $$ |\vec{V}_1 - \vec{V}_3| = \sqrt{(3-6)^2 + (1-3)^2} = \sqrt{13} \approx 3.606 $$
 
 $$ |\vec{V}_1 - \vec{V}_2| = \sqrt{(3-2)^2 + (1-5)^2} = \sqrt{17} \approx 4.123 $$
