@@ -1,0 +1,17 @@
+{
+  "name": "AoC2025-D10",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "^25.0.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  }
+}
