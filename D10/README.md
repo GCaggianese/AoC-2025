@@ -86,7 +86,89 @@ Use dynamic programming to explore all reachable XOR states:
 * Target: `011101`
 * **Minimum presses**: `2`
 
-### Answer
-Sum the minimum presses across all machines:
-$$2 + 3 + 2 = 7$$
+## Part Two
 
+Calculate the minimum number of button presses to satisfy the joltage requirements for each machine.
+
+### Concept
+
+The operating mode of the machines changes from manipulating bits (indicator lights) to manipulating integer counters (joltage levels).
+
+* **Goal:** Match the target integer values specified in `{curly braces}`.
+* **Mechanism:**
+* All counters start at 0.
+* Pressing a button **increases** the specific counters it is wired to by `1`.
+* This is an **additive** operation (Linear Algebra), distinct from the XOR operation in Part One.
+
+
+
+### Problem Formulation
+
+We are solving a system of linear equations where the button vectors must sum up to the target vector.
+
+Given:
+
+* Target vector  of size  (from `{...}`).
+*  buttons, where each button  is represented by a vector  of size .
+* If button  affects counter , then , else .
+
+
+
+Find non-negative integers  (representing press counts) that satisfy:
+
+**Objective:** Minimize the total presses :
+
+
+### Algorithm
+
+Since the operations are linear, we can use **Gaussian Elimination** to solve for .
+
+1. **Matrix Construction**: Create an augmented matrix  where columns of  are the button vectors .
+2. **Row Reduction**: Perform Gaussian elimination to transform the matrix into Row Echelon Form.
+3. **Back Substitution**: Solve for the variables .
+* **Determined System**: If there is a unique solution, verify that all  are non-negative integers.
+* **Under-determined System**: If there are free variables (infinite solutions), perform a bounded search on the free variables to find the combination that minimizes .
+
+
+4. **Verification**: Ensure the calculated presses result in integers (within floating-point epsilon) and are .
+
+### Example Solutions
+
+**Machine 1**: `[.##.] (3) (1,3) (2) (2,3) (0,2) (0,1) {3,5,4,7}`
+
+* **Target**: `[3, 5, 4, 7]`
+* **Optimization**:
+* Button `(3)` affects index 0 (if indices are reversed) or index 3 depending on mapping.
+* The manual notes one solution: Press `(3)` 1x, `(1,3)` 3x, `(2,3)` 3x, `(0,2)` 1x, `(0,1)` 2x.
+* Total presses: .
+
+
+* **Minimum presses**: `10`
+
+**Machine 2**: `[...#.] ... {7,5,12,7,2}`
+
+* **Target**: `[7, 5, 12, 7, 2]`
+* **Solution**: Press `(0,2,3,4)` 2x, `(2,3)` 5x, `(0,1,2)` 5x.
+* **Minimum presses**: `12`
+
+**Machine 3**: `[.###.#] ... {10,11,11,5,10,5}`
+
+* **Target**: `[10, 11, 11, 5, 10, 5]`
+* **Solution**: Press `(0,1,2,3,4)` 5x, `(0,1,2,4,5)` 5x, `(1,2)` 1x.
+* **Minimum presses**: `11`
+
+# Implementation
+
+## Part One: Typescript
+
+``` sh
+cd Part_One-Typescript/;
+yarn build && yarn start
+```
+
+## Part Two: Rust
+
+``` sh
+cd Part_Two-Rust/;
+RUSTFLAGS="-C target-cpu=native" cargo run --release
+```

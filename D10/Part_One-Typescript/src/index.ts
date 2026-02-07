@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Germán Caggianese <german.caggianese@pm.me>
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';

@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2026 NONE
+#
+# SPDX-License-Identifier: Unlicense
+
+[package]
+name = "Part_Two-Rust"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+regex = "1.10"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = 'abort'
