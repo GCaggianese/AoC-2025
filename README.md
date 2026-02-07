@@ -26,3 +26,6 @@ Solutions to the 2025 puzzles!
    - [Ada Resource Association](https://www.adaic.org/)
 9. [Day 9 - Gambit](./D9/README.md)
    - [Gambit Scheme](https://gambitscheme.org/)
+10. [Day 10 - Typescript & Rust](./D10/README.md)
+   - [Javascript with syntax for types](https://www.typescriptlang.org/)
+   - [Rust Programming Language](https://rust-lang.org/)
