@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: 2025 Germán Caggianese <german.caggianese@pm.me>
+SPDX-FileCopyrightText: 2026 Germán Caggianese <german.caggianese@pm.me>
 
 SPDX-License-Identifier: Apache-2.0
 -->
