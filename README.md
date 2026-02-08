@@ -29,3 +29,5 @@ Solutions to the 2025 puzzles!
 10. [Day 10 - Typescript & Rust](./D10/README.md)
     - [Javascript with syntax for types](https://www.typescriptlang.org/)
     - [Rust Programming Language](https://rust-lang.org/)
+11. [Day 11 - Nim](./D11/README.md)
+    - [Nim Programming Language](https://nim-lang.org/)
