@@ -1,6 +1,6 @@
---  SPDX-FileCopyrightText: 2026 NONE
+--  SPDX-FileCopyrightText: 2026 Germán Caggianese <german.caggianese@pm.me>
 --
---  SPDX-License-Identifier: Unlicense
+--  SPDX-License-Identifier: Apache-2.0
 
 with Ada.Text_IO;                       use Ada.Text_IO;
 with Ada.Containers.Vectors;

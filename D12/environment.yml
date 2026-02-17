@@ -1,0 +1,5 @@
+name: D12
+channels:
+dependencies:
+
+prefix: "/home/kang/.conda/envs/D12"
