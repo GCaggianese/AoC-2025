@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Germán Caggianese（康青旭）<german.caggianese@pm>
+#
+# SPDX-License-Identifier: Apache-2.0
+
 [project]
 name = "D12"
 version = "0.1.1"
