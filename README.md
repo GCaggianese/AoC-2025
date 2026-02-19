@@ -31,3 +31,5 @@ Solutions to the 2025 puzzles!
     - [Rust Programming Language](https://rust-lang.org/)
 11. [Day 11 - Nim](./D11/README.md)
     - [Nim Programming Language](https://nim-lang.org/)
+12. [Day 12 - Python](./D12/README.rst)
+    - [Welcome to Python.org](https://www.python.org/)
