@@ -1,5 +1,5 @@
-Day 12 — Piece Packing with Rotations
-====================================
+Puzzle `Day 12: Christmas Tree Farm <https://adventofcode.com/2025/day/12>`_
+===========================================================
 
 This project solves a constrained packing problem on small grids.
 
